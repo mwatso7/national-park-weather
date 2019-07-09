@@ -10,10 +10,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
-import com.techelevator.NationalPark.model.Campground;
-
 @Component
-public class JDBCparkDAO implements parkDAO{
+public class JDBCparkDAO implements ParkDAO{
 	
 	private JdbcTemplate jdbcTemplate;
 
@@ -49,12 +47,12 @@ public class JDBCparkDAO implements parkDAO{
 
 	private Park mapRowToPark(SqlRowSet results) {
 		Park thePark = new Park();
-		thePark.setParkcode(results.getString("parkcode"));
+		thePark.setParkcode(results.getString("parkcode").toLowerCase());
 		thePark.setParkname(results.getString("parkname"));
 		thePark.setState(results.getString("state"));
 		thePark.setAcreage(results.getInt("acreage"));
 		thePark.setElevationinfeet(results.getInt("elevationinfeet"));
-		thePark.setMilesoftrail(results.getInt("milesoftrail"));
+		thePark.setMilesoftrail(results.getDouble("milesoftrail"));
 		thePark.setNumberofcampsites(results.getInt("numberofcampsites"));
 		thePark.setClimate(results.getString("climate"));
 		thePark.setYearfounded(results.getInt("yearfounded"));
