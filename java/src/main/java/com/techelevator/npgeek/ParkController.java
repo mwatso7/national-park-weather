@@ -6,16 +6,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.techelevator.npgeek.park.Park;
 import com.techelevator.npgeek.park.ParkDAO;
+import com.techelevator.npgeek.weather.WeatherDAO;
 
 @Controller
 public class ParkController {
 	
 	@Autowired 
 	private ParkDAO parkDAO;
+	
+	@Autowired
+	private WeatherDAO weatherDAO;
 	
 	@RequestMapping("/")
 	public String displayHome(ModelMap modelHolder) {
@@ -31,11 +36,12 @@ public class ParkController {
 		return "survey";
 	}
 	
-	@RequestMapping("/parkDetail")
+	@RequestMapping(path= "/parkDetail", method= RequestMethod.GET)
 	public String displayParkDetail(@RequestParam String parkcode, ModelMap modelHolder) {
-		Park aPark = parkDAO.getParkByCode(parkcode);
 		
-		modelHolder.put("parkDetail", aPark);
+		modelHolder.put("park", parkDAO.getParkByCode(parkcode));
+		modelHolder.put("weather", weatherDAO.getWeatherByCode(parkcode));
+		
 		return "parkDetail";
 	}
 	

@@ -107,3 +107,5 @@ INSERT INTO weather(parkCode, fiveDayForecastValue, low, high, forecast) VALUES 
 INSERT INTO weather(parkCode, fiveDayForecastValue, low, high, forecast) VALUES ('RMNP',3,34,50,'partly cloudy');
 INSERT INTO weather(parkCode, fiveDayForecastValue, low, high, forecast) VALUES ('RMNP',4,33,47,'partly cloudy');
 INSERT INTO weather(parkCode, fiveDayForecastValue, low, high, forecast) VALUES ('RMNP',5,30,43,'rain');
+
+SELECT * FROM park WHERE parkcode = 'CVNP' ORDER BY parkname

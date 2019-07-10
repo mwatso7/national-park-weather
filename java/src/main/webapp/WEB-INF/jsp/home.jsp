@@ -7,7 +7,7 @@
 <c:forEach var="park" items="${parks}">
 	
 	<p>${park.parkname}</p>
-	<p><img src="img/parks/${park.parkcode}.jpg"/></p>
+	<p><a href="parkDetail?parkcode=${park.parkcode}"><img src="img/parks/${park.parkcode}.jpg"/></a></p>
 	<p>${park.parkdescription}</p>
 	
 	</c:forEach>
