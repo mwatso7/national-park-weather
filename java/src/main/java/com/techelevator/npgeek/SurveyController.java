@@ -48,13 +48,9 @@ public class SurveyController {
 	
 	@RequestMapping("/favoriteparks")
 	public String displayFavoriteParks(ModelMap modelHandler) {
-		List<Park> allParks = parkDAO.getAllParks();
-		List<FavoritePark> favoriteParks = new ArrayList<FavoritePark>();
-		for (Park aPark : allParks) {
-			FavoritePark favPark = new FavoritePark(aPark.getParkcode(), aPark.getParkname(), surveyDAO.getAllSurveysByCode(aPark.getParkcode()).size());
-			favoriteParks.add(favPark);
-		}
-		modelHandler.put("surveys", favoriteParks);
+		List<FavoritePark> favoriteParks = surveyDAO.getFavoriteParks();
+
+		modelHandler.put("favoriteparks", favoriteParks);
 		return "favoriteParks";
 	}
 }

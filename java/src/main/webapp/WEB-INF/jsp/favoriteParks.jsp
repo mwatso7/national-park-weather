@@ -5,7 +5,8 @@
 </c:import>
 
 <div>
-<c:forEach var="park" items="${parks}">
+<c:forEach var="park" items="${favoriteparks}">
+<p>${park.parkname} : ${park.numberOfSurveys}</p>
 
 </c:forEach>
 </div>

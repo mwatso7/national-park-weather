@@ -10,6 +10,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
+import com.techelevator.npgeek.park.FavoritePark;
 import com.techelevator.npgeek.park.Park;
 
 @Component
@@ -34,6 +35,24 @@ public class JDBCSurveyDAO implements SurveyDAO{
 			theSurveys.add(theSurvey);
 		}
 		return theSurveys;
+	}
+	
+	@Override
+	public List<FavoritePark> getFavoriteParks() {
+		List<FavoritePark> theParks = new ArrayList<FavoritePark>();
+
+		String sqlGetAllFavoritePark = 	"SELECT park.parkcode, parkname, COUNT(survey_result.parkcode) AS thecount " + 
+										"FROM survey_result, park " + 
+										"WHERE survey_result.parkcode = park.parkcode " + 
+										"GROUP BY park.parkcode " + 
+										"ORDER BY thecount DESC, parkname";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetAllFavoritePark);
+
+		while (results.next()) {
+			FavoritePark thePark = new FavoritePark(results.getString("parkcode"), results.getString("parkname"), results.getInt("thecount"));
+			theParks.add(thePark);
+		}
+		return theParks;
 	}
 
 	@Override
