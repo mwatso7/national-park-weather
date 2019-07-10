@@ -2,6 +2,8 @@ package com.techelevator.npgeek;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -23,8 +25,11 @@ public class ParkController {
 	private WeatherDAO weatherDAO;
 	
 	@RequestMapping("/")
-	public String displayHome(ModelMap modelHolder) {
+	public String displayHome(ModelMap modelHolder, HttpSession session) {
 		List<Park> allParks = parkDAO.getAllParks();
+		if(session.getAttribute("celOrFar") == null) {
+			session.setAttribute("celOrFar", "F");
+		}
 		
 		modelHolder.put("parks", allParks);
 		
@@ -32,7 +37,8 @@ public class ParkController {
 	}
 	
 	@RequestMapping(path= "/parkDetail", method= RequestMethod.GET)
-	public String displayParkDetail(@RequestParam String parkcode, ModelMap modelHolder) {
+	public String displayParkDetail(@RequestParam String parkcode, @RequestParam String celOrFar, ModelMap modelHolder, HttpSession session) {
+		session.setAttribute("celOrFar", celOrFar);
 		
 		modelHolder.put("park", parkDAO.getParkByCode(parkcode.toUpperCase()));
 		modelHolder.put("weather", weatherDAO.getWeatherByCode(parkcode.toUpperCase()));

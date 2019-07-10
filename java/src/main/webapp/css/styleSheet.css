@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 #logo {
-	width: 200px;
+	width: 250px;
 }
 
 img {
@@ -10,6 +10,25 @@ img {
 
 nav {
 	background-color: black;
+	color: white;
+	text-decoration: none;
+}
+
+nav ul{
+	margin: 0px;
+	padding-left: 10px;
+	display: flex;
+	justify-content: flex-start;
+	list-style-type: none;
+}
+
+nav ul li{
+	padding: 10px
+}
+
+nav a{
+	text-decoration: none;
+	color: white;
 }
 
 #day1 {

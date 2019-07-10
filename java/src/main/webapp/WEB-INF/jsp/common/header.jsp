@@ -15,7 +15,8 @@
 		<div id="logo">
 			<a href="${homePageHref}"><img src="img/logo.png"/></a>
 		</div>
-		<nav>f
+		<nav>
+		<ul>
 			<li><a href="${homePageHref}">Home</a></li>
 			<li><a href="survey">Survey</a></li>
 		</ul>	

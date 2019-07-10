@@ -33,6 +33,11 @@
 </div>
 
 <div>
+	<a href="parkDetail?parkcode=${park.parkcode}&celOrFar=C">C</a>
+	<a href="parkDetail?parkcode=${park.parkcode}&celOrFar=F">F</a>
+</div>
+
+<div>
 	<c:forEach var="day" items="${weather}">
 		
 		<div id="day${day.fivedayforecastvalue}">
@@ -41,7 +46,16 @@
 			<c:url var = "weatherimage" value ="/img/weather/partlyCloudy.png"/>
 		</c:if>
 		<img src="${weatherimage}" />
-		${day.high} ${day.low}
+		<c:choose>
+		<c:when test="${celOrFar eq 'C'}">
+			<p>High: ${(5/9)*(day.high - 32)} deg C</p>
+			<p>Low: ${(5/9)*(day.low - 32)} deg C</p>
+		</c:when>
+		<c:otherwise>
+			<p>${day.high} deg F</p>
+			<p>${day.low} deg F</p>
+		</c:otherwise>
+		</c:choose>
 		</div>
 			
 	</c:forEach>
