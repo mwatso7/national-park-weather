@@ -31,16 +31,11 @@ public class ParkController {
 		return "home";
 	}
 	
-	@RequestMapping("/survey")
-	public String displaySurvey() {
-		return "survey";
-	}
-	
 	@RequestMapping(path= "/parkDetail", method= RequestMethod.GET)
 	public String displayParkDetail(@RequestParam String parkcode, ModelMap modelHolder) {
 		
-		modelHolder.put("park", parkDAO.getParkByCode(parkcode));
-		modelHolder.put("weather", weatherDAO.getWeatherByCode(parkcode));
+		modelHolder.put("park", parkDAO.getParkByCode(parkcode.toUpperCase()));
+		modelHolder.put("weather", weatherDAO.getWeatherByCode(parkcode.toUpperCase()));
 		
 		return "parkDetail";
 	}

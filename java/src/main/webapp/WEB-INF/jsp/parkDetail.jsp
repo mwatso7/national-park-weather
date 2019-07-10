@@ -34,7 +34,16 @@
 
 <div>
 	<c:forEach var="day" items="${weather}">
-		<p>${day.high}</p>	
+		
+		<div id="day${day.fivedayforecastvalue}">
+		<c:url var = "weatherimage" value ="/img/weather/${day.forecast}.png"/>
+		<c:if test="${day.forecast eq 'partly cloudy'}">
+			<c:url var = "weatherimage" value ="/img/weather/partlyCloudy.png"/>
+		</c:if>
+		<img src="${weatherimage}" />
+		${day.high} ${day.low}
+		</div>
+			
 	</c:forEach>
 </div>
 
