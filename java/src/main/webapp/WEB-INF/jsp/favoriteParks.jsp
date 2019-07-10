@@ -6,6 +6,11 @@
 
 <div>
 <c:forEach var="park" items="${favoriteparks}">
+<c:url var = "image" value ="/img/parks/${park.parkcode}.jpg"/>
+<div>
+	<a href="parkDetail?parkcode=${park.parkcode}"><img src="${image}"/></a>
+</div>
+
 <p>${park.parkname} : ${park.numberOfSurveys}</p>
 
 </c:forEach>
