@@ -108,4 +108,22 @@ INSERT INTO weather(parkCode, fiveDayForecastValue, low, high, forecast) VALUES 
 INSERT INTO weather(parkCode, fiveDayForecastValue, low, high, forecast) VALUES ('RMNP',4,33,47,'partly cloudy');
 INSERT INTO weather(parkCode, fiveDayForecastValue, low, high, forecast) VALUES ('RMNP',5,30,43,'rain');
 
-SELECT * FROM park WHERE parkcode = 'CVNP' ORDER BY parkname
+BEGIN TRANSACTION;
+
+INSERT INTO survey_result
+(parkcode, emailaddress, state, activitylevel) 
+VALUES('CVNP', '123@no.com', 'OH', 'high');
+
+INSERT INTO survey_result
+(parkcode, emailaddress, state, activitylevel)
+VALUES('ENP', '456@no.com', 'PA', 'med');
+
+INSERT INTO survey_result
+(parkcode, emailaddress, state, activitylevel)
+VALUES('ENP', '789@no.com', 'NY', 'low');
+
+SELECT parkcode, COUNT(parkcode) AS theCount
+FROM survey_result 
+ORDER BY theCount DESC;
+
+ROLLBACK;

@@ -49,7 +49,7 @@ public class JDBCSurveyDAO implements SurveyDAO{
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetAllFavoritePark);
 
 		while (results.next()) {
-			FavoritePark thePark = new FavoritePark(results.getString("parkcode"), results.getString("parkname"), results.getInt("thecount"));
+			FavoritePark thePark = new FavoritePark(results.getString("parkcode").toLowerCase(), results.getString("parkname"), results.getInt("thecount"));
 			theParks.add(thePark);
 		}
 		return theParks;
