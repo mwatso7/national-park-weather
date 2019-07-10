@@ -9,7 +9,7 @@
 
 	<div>
 		<label for="favoritePark">Choose a Park</label>
-			<select name ="chosenPark" id="favoritePark">
+			<select name ="parkcode" id="parkcode">
 				<c:forEach var="park" items="${parks}">
 					<option value="${park.parkcode}">${park.parkname}</option>
 				</c:forEach>
@@ -23,7 +23,7 @@
 		
 		<div>
 			<label for="state">Choose a state</label>
-				<select>
+				<select name="state">
 					<option value="AL">Alabama</option>
 					<option value="AK">Alaska</option>
 					<option value="AZ">Arizona</option>
