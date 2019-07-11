@@ -5,6 +5,7 @@
 <c:param name="pageTitle" value="ParkHomePage" />
 </c:import>
 <h1>National Parks Survey Form</h1>
+<h2>Vote for your favorite park!</h2>
 <c:url var="formAction" value="/survey"/>
 <form:form method ="POST" action="${formAction}" modelAttribute="survey">
 		

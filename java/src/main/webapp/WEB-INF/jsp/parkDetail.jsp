@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
 <c:import url="/WEB-INF/jsp/common/header.jsp">
 <c:param name="pageTitle" value="ParkHomePage" />
@@ -53,8 +54,8 @@
 			<c:choose>
 			
 				<c:when test="${celOrFar eq 'C'}">
-					<p class="high">High: ${(5/9)*(day.high - 32)}&degC</p>
-					<p class="low">Low: ${(5/9)*(day.low - 32)}&degC</p>
+					<p class="high">High: <fmt:formatNumber type = "number" maxFractionDigits = "0" value = "${(5/9)*(day.high - 32)}"/>&degC</p>
+					<p class="low">Low: <fmt:formatNumber type = "number" maxFractionDigits = "0" value = "${(5/9)*(day.low - 32)}"/>&degC</p>
 				</c:when>
 				
 				<c:otherwise>
