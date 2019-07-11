@@ -3,6 +3,7 @@ package com.techelevator.npgeek;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,7 +72,7 @@ public class SurveyController {
 	}
 	
 	@RequestMapping("/favoriteparks")
-	public String displayFavoriteParks(ModelMap modelHandler) {
+	public String displayFavoriteParks(ModelMap modelHandler, HttpSession session) {
 		List<FavoritePark> favoriteParks = surveyDAO.getFavoriteParks();
 		
 		modelHandler.put("favoritepark", favoriteParks);

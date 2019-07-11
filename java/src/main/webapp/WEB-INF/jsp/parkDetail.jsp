@@ -45,18 +45,18 @@
 				<c:url var = "weatherimage" value ="/img/weather/partlyCloudy.png"/>
 			</c:if>
 			
-			<img id="logoImg" src="${weatherimage}" />
+			<img id="weatherImg" src="${weatherimage}" />
 			
 			<c:choose>
 			
 				<c:when test="${celOrFar eq 'C'}">
-					<p>High: ${(5/9)*(day.high - 32)} deg C</p>
-					<p>Low: ${(5/9)*(day.low - 32)} deg C</p>
+					<p class="high">High: ${(5/9)*(day.high - 32)}&degC</p>
+					<p class="low">Low: ${(5/9)*(day.low - 32)}&degC</p>
 				</c:when>
 				
 				<c:otherwise>
-					<p>${day.high} deg F</p>
-					<p>${day.low} deg F</p>
+					<p class="high">High: ${day.high}&degF</p>
+					<p class="low">Low: ${day.low}&degF</p>
 				</c:otherwise>
 				
 			</c:choose>
