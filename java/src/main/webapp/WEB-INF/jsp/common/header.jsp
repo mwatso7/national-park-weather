@@ -13,7 +13,7 @@
 	<header>
 		<c:url value="/" var="homePageHref" />
 		<div id="logo">
-			<a href="${homePageHref}"><img src="img/logo.png"/></a>
+			<a href="${homePageHref}"><img id="logoImg" src="img/logo.png"/></a>
 		</div>
 		<nav>
 		<ul>

@@ -4,8 +4,6 @@
 <c:param name="pageTitle" value="ParkHomePage" />
 </c:import>
 
-<p>park detail page</p>
-
 <c:url var = "image" value ="/img/parks/${park.parkcode}.jpg"/>
 
 <div>
@@ -13,49 +11,55 @@
 </div>
 
 <div>
-	<p>${park.parkname} (${park.parkcode})</p>
+	<h1>${park.parkname}</h1>
 </div>
 
 <div>
-	<p>Location: ${park.state}</p>
-	<p>Acreage: ${park.acreage}</p>
-	<p>Elevation: ${park.elevationinfeet}</p>
-	<p>Total trail length: ${park.milesoftrail}</p>
-	<p>Number of campsites: ${park.numberofcampsites}</p>
-	<p>Climate: ${park.climate}</p>
-	<p>Year founded: ${park.yearfounded}</p>
-	<p>Annual visitor count: ${park.annualvisitorcount}</p>
-	<p>Park quote: ${park.inspirationalquote}</p>
-	<p>Quote source: ${park.inspirationalquotesource}</p>
-	<p>Park description: ${park.parkdescription}</p>
-	<p>Entry fee: ${park.entryfee}</p>
-	<p>Number of animal species: ${park.numberofanimalspecies}</p>
+	<p><span class="bold">Location: </span>${park.state}</p>
+	<p><span class="bold">Acreage: </span>${park.acreage}</p>
+	<p><span class="bold">Elevation: </span>${park.elevationinfeet}</p>
+	<p><span class="bold">Total trail length: </span>${park.milesoftrail}</p>
+	<p><span class="bold">Number of campsites: </span>${park.numberofcampsites}</p>
+	<p><span class="bold">Climate: </span>${park.climate}</p>
+	<p><span class="bold">Year founded: </span>${park.yearfounded}</p>
+	<p><span class="bold">Annual visitor count: </span>${park.annualvisitorcount}</p>
+	<p><span class="bold">Park quote: </span>${park.inspirationalquote}</p>
+	<p><span class="bold">Quote source: </span>${park.inspirationalquotesource}</p>
+	<p><span class="bold">Park description: </span>${park.parkdescription}</p>
+	<p><span class="bold">Entry fee: </span>${park.entryfee}</p>
+	<p><span class="bold">Number of animal species: </span>${park.numberofanimalspecies}</p>
 </div>
 
 <div>
-	<a href="parkDetail?parkcode=${park.parkcode}&celOrFar=C">C</a>
+	<p>Display units in (F)arenheit or (C)elsius. Default (F).</p>
 	<a href="parkDetail?parkcode=${park.parkcode}&celOrFar=F">F</a>
+	<a href="parkDetail?parkcode=${park.parkcode}&celOrFar=C">C</a>
 </div>
 
-<div>
+<div id="weatherDisplay">
 	<c:forEach var="day" items="${weather}">
 		
 		<div id="day${day.fivedayforecastvalue}">
-		<c:url var = "weatherimage" value ="/img/weather/${day.forecast}.png"/>
-		<c:if test="${day.forecast eq 'partly cloudy'}">
-			<c:url var = "weatherimage" value ="/img/weather/partlyCloudy.png"/>
-		</c:if>
-		<img src="${weatherimage}" />
-		<c:choose>
-		<c:when test="${celOrFar eq 'C'}">
-			<p>High: ${(5/9)*(day.high - 32)} deg C</p>
-			<p>Low: ${(5/9)*(day.low - 32)} deg C</p>
-		</c:when>
-		<c:otherwise>
-			<p>${day.high} deg F</p>
-			<p>${day.low} deg F</p>
-		</c:otherwise>
-		</c:choose>
+			<c:url var = "weatherimage" value ="/img/weather/${day.forecast}.png"/>
+			<c:if test="${day.forecast eq 'partly cloudy'}">
+				<c:url var = "weatherimage" value ="/img/weather/partlyCloudy.png"/>
+			</c:if>
+			
+			<img id="logoImg" src="${weatherimage}" />
+			
+			<c:choose>
+			
+				<c:when test="${celOrFar eq 'C'}">
+					<p>High: ${(5/9)*(day.high - 32)} deg C</p>
+					<p>Low: ${(5/9)*(day.low - 32)} deg C</p>
+				</c:when>
+				
+				<c:otherwise>
+					<p>${day.high} deg F</p>
+					<p>${day.low} deg F</p>
+				</c:otherwise>
+				
+			</c:choose>
 		</div>
 			
 	</c:forEach>

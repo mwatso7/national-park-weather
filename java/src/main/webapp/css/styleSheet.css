@@ -4,7 +4,7 @@
 	width: 250px;
 }
 
-img {
+#logoImg {
 	width: 100%;
 }
 
@@ -35,6 +35,10 @@ nav a{
 	width: 500px;
 }
 
+.bold{
+	font-weight:bold;
+}
+
 #er {
 	color: red;
 }
@@ -49,8 +53,33 @@ nav a{
 
 #day1 {
 	background-color: blue;
+	width: 40%
 }
 
 #day2, #day3, #day4, #day5{
 	background-color: red;
+	width: 15%
+}
+
+#parkHomeDisplay{
+	display:flex;
+}
+
+#parkHomeImage{
+	width: 28%;
+}
+
+#parkHomeDescriptionDiv{
+	width:68%;
+}
+
+#tableHeader{
+	font-weight: bold;
+	font-size: 18px;
+}
+
+#weatherDisplay{
+	display: flex;
+	width: 75%;
+	height: 75%;
 }
