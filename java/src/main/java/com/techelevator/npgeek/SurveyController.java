@@ -73,8 +73,8 @@ public class SurveyController {
 	@RequestMapping("/favoriteparks")
 	public String displayFavoriteParks(ModelMap modelHandler) {
 		List<FavoritePark> favoriteParks = surveyDAO.getFavoriteParks();
-
-		modelHandler.put("favoriteparks", favoriteParks);
+		
+		modelHandler.put("favoritepark", favoriteParks);
 		return "favoriteParks";
 	}
 }

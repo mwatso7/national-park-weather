@@ -9,28 +9,16 @@ public class Survey {
 	
 	private long surveyid;
 	
-	@NotBlank(message="Park is required") 
 	private String parkcode;
 	
-	@NotBlank(message="Email is required") 
-	@Email(message="Email must be a valid email address")
+	@NotBlank(message="** email is required **") 
+	@Email(message="** email must be a valid email address **")
 	private String emailaddress;
-	
-	@NotBlank(message="State is required") 
+
 	private String state;
-	
-	@NotBlank(message="Activity is required") 
+	 
 	private String activitylevel;
 	
-	//CTOR********************************************************************************************************
-	
-	public Survey() {
-		surveyid = 0;
-		parkcode = "unassigned";
-		emailaddress = "unassigned";
-		state = "unassigned";
-		activitylevel = "unassigned";
-	}
 	
 	//Get/Set*****************************************************************************************************
 	

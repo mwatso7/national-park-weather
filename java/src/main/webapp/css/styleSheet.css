@@ -31,6 +31,22 @@ nav a{
 	color: white;
 }
 
+.label {
+	width: 500px;
+}
+
+#er {
+	color: red;
+}
+
+#surv {
+	text-align: left;
+}
+
+#surv td:nth-child(odd){
+	width: 200px;
+}
+
 #day1 {
 	background-color: blue;
 }

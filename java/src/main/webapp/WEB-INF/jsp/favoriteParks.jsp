@@ -5,7 +5,8 @@
 </c:import>
 
 <div>
-<c:forEach var="park" items="${favoriteparks}">
+${favoritepark}
+<c:forEach var="park" items="${favoritepark}">
 <c:url var = "image" value ="/img/parks/${park.parkcode}.jpg"/>
 <div>
 	<a href="parkDetail?parkcode=${park.parkcode}"><img src="${image}"/></a>

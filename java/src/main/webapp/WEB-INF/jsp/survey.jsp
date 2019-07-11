@@ -1,28 +1,34 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <c:import url="/WEB-INF/jsp/common/header.jsp">
 <c:param name="pageTitle" value="ParkHomePage" />
 </c:import>
 <h1>National Parks Survey Form</h1>
 <c:url var="formAction" value="/survey"/>
-<form method ="POST" action="${formAction}">
-
-	<div>
+<form:form method ="POST" action="${formAction}" modelAttribute="survey">
+		
+		<table id="surv"><tr>
+		<td>
 		<label for="favoritePark">Choose a Park</label>
+		</td><td>
 			<select name ="parkcode" id="parkcode">
 				<c:forEach var="park" items="${parks}">
 					<option value="${park.parkcode}">${park.parkname}</option>
 				</c:forEach>
 			</select>
-		</div>
-		
-		<div>
+		</td>
+		</tr><tr>
+		<td>
 			 <label for="emailaddress">Enter Your email Address</label>
-		 	 	<input type="text" name="emailaddress" id="emailaddress">
-		</div>
-		
-		<div>
+		</td><td>
+		 	 <form:input path="emailaddress"/>
+		 	 <form:errors path="emailaddress" id="er" cssClass="error"/>
+		</td>
+		</tr><tr>
+		<td>
 			<label for="state">Choose a state</label>
+		</td><td>
 				<select name="state">
 					<option value="AL">Alabama</option>
 					<option value="AK">Alaska</option>
@@ -77,18 +83,21 @@
 					<option value="WY">Wyoming</option>
 					<option value="na">Other</option>
 				</select>
-		</div>
-		
-		<div>
+		</td>
+		</tr><tr>
+		<td>
 			 <label for="activitylevel">Select an Activity Level</label>
-			 	<input type="radio" name="activitylevel" id="activitylevel" value="Extreme!!!"/> Extreme!!!
+		</td><td>
+			 	<input type="radio" name="activitylevel" id="activitylevel" value="Extreme!!!" checked/> Extreme!!!
 		 	 	<input type="radio" name="activitylevel" id="activitylevel" value="High"/> High
 		 	 	<input type="radio" name="activitylevel" id="activitylevel" value="Medium"/> Medium
 		 	 	<input type="radio" name="activitylevel" id="activitylevel" value="Low"/> Low
-		</div>
-		
+		</td>
+		</tr><tr><td></td><td>
 		 <input class="button" type="submit" value="Submit">
+		 </td>
+		</tr></table>
 
-</form>
+</form:form>
 </body>
 </html>
