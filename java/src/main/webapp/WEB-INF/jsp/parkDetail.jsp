@@ -36,9 +36,7 @@
 	<a href="parkDetail?parkcode=${park.parkcode}&celOrFar=F">F</a>
 	<a href="parkDetail?parkcode=${park.parkcode}&celOrFar=C">C</a>
 </div>
-<div id="warning">
-<p>Today's forecast calls for extreme everything that could be bad about weather</p>
-</div>
+
 </div>
 <div id="weatherDisplay">
 
@@ -65,6 +63,58 @@
 				</c:otherwise>
 				
 			</c:choose>
+			
+				<div id="warning">
+					<c:choose>
+						<c:when test="${day.fivedayforecastvalue eq 1}">
+							<c:choose>
+							
+								<c:when test="${day.forecast eq 'rain'}">
+									<p>Pack rain gear and wear waterproof shoes</p>
+								</c:when>
+								
+								<c:when test="${day.forecast eq 'snow'}">
+									<p>Pack snowshoes</p>
+								</c:when>
+								
+								<c:when test="${day.forecast eq 'thunderstorms'}">
+									<p>Seek shelter and avoid hiking on exposed ridges</p>
+								</c:when>
+								
+								<c:when test="${day.forecast eq 'rain'}">
+									<p>Pack sunblock</p>
+								</c:when>
+								
+							</c:choose>
+							
+							<c:choose>
+							
+								<c:when test="${day.high > 75}">
+									<p>Bring an extra gallon of water</p>
+								</c:when>
+								
+								<c:when test="${day.high - day.low > 20}">
+									<p>Wear breathable layers</p>
+								</c:when>
+								
+								<c:when test="${day.low < 20}">
+									<p>Consider yourself warned about the dangers of exposure to frigid temperatures</p>
+								</c:when>
+								
+							</c:choose>
+							
+							
+							
+							
+							
+						</c:when>
+					</c:choose>
+				</div>
+				
+		</div>
+		
+		<div>
+			
 		</div>
 			
 	</c:forEach>
