@@ -30,13 +30,18 @@
 	<p><span class="bold">Number of animal species: </span>${park.numberofanimalspecies}</p>
 </div>
 
-<div>
 	<p>Display units in (F)arenheit or (C)elsius. Default (F).</p>
+<div id="banner">
+<div id="cel">
 	<a href="parkDetail?parkcode=${park.parkcode}&celOrFar=F">F</a>
 	<a href="parkDetail?parkcode=${park.parkcode}&celOrFar=C">C</a>
 </div>
-
+<div id="warning">
+<p>Today's forecast calls for extreme everything that could be bad about weather</p>
+</div>
+</div>
 <div id="weatherDisplay">
+
 	<c:forEach var="day" items="${weather}">
 		
 		<div id="day${day.fivedayforecastvalue}">
