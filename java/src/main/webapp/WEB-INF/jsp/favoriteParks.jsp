@@ -5,7 +5,6 @@
 </c:import>
 
 <div>
-${favoritepark}
 <c:forEach var="park" items="${favoritepark}">
 <c:url var = "image" value ="/img/parks/${park.parkcode}.jpg"/>
 <div>

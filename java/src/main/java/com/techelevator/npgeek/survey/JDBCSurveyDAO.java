@@ -60,7 +60,7 @@ public class JDBCSurveyDAO implements SurveyDAO{
 		try{
 			int id = getNextId();
 			String sqlInsertSurvey = "INSERT INTO survey_result(surveyid, parkcode, emailaddress, state, activitylevel) VALUES (?,?,?,?,?)";
-			jdbcTemplate.update(sqlInsertSurvey, id, userSurvey.getParkcode(), userSurvey.getEmailaddress(), userSurvey.getState(), userSurvey.getActivitylevel());
+			jdbcTemplate.update(sqlInsertSurvey, id, userSurvey.getParkcode().toUpperCase(), userSurvey.getEmailaddress(), userSurvey.getState(), userSurvey.getActivitylevel());
 		} catch (Exception e){
 			return false;
 		}
