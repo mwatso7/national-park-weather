@@ -3,7 +3,8 @@
 <c:import url="/WEB-INF/jsp/common/header.jsp">
 <c:param name="pageTitle" value="ParkHomePage" />
 </c:import>
-
+<main>
+	<h1>Welcome the National Park Geek Weather and Information Center!</h1>
 	<c:forEach var="park" items="${parks}">
 		<div id="parkHomeDisplay">
 			<div id="parkHomeImage">
@@ -12,20 +13,18 @@
 			
 			<div id="parkHomeDescriptionDiv">
 				<table>
-					<th>
-						<tr>
-							<td id="tableHeader">${park.parkname}</td>
-						</tr>
-					</th>
+					<tr>
+						<th id="tableHeader">${park.parkname}</th>
+					</tr>
 						
-						<tr>
-							<td>${park.parkdescription}</td>
-						</tr>
+					<tr>
+						<td>${park.parkdescription}</td>
+					</tr>
 				</table>
 			</div>
 		</div>
 	
 	</c:forEach>
-	
+</main>	
 </body>
 </html>

@@ -3,7 +3,8 @@
 <c:import url="/WEB-INF/jsp/common/header.jsp">
 <c:param name="pageTitle" value="ParkHomePage" />
 </c:import>
-
+<main>
+<h1>National Park Geek Favorite Park Winners!</h1>
 <div>
 <c:forEach var="park" items="${favoritepark}">
 <c:url var = "image" value ="/img/parks/${park.parkcode}.jpg"/>
@@ -15,6 +16,6 @@
 
 </c:forEach>
 </div>
-
+</main>
 </body>
 </html>

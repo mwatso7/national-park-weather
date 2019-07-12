@@ -17,8 +17,8 @@
 		</div>
 		<nav>
 		<ul>
-			<li><a href="${homePageHref}">Home</a></li>
-			<li><a href="survey">Survey</a></li>
+			<a href="${homePageHref}"><li>Home</li></a>
+			<a href="survey"><li>Survey</li></a>
 		</ul>	
 		</nav>
 	</header>

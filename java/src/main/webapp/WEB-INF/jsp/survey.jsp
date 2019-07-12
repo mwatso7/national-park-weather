@@ -4,6 +4,7 @@
 <c:import url="/WEB-INF/jsp/common/header.jsp">
 <c:param name="pageTitle" value="ParkHomePage" />
 </c:import>
+<main>
 <h1>National Parks Survey Form</h1>
 <h2>Vote for your favorite park!</h2>
 <c:url var="formAction" value="/survey"/>
@@ -100,5 +101,6 @@
 		</tr></table>
 
 </form:form>
+</main>
 </body>
 </html>

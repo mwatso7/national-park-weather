@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 #logo {
-	width: 250px;
+	width: 300px;
 }
 
 #logoImg {
@@ -13,25 +13,48 @@
 	border-radius: 20px 20px 20px 20px;
 }
 
+main {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
 nav {
 	background-color: black;
 	color: white;
 	text-decoration: none;
+	border-radius: 10px 10px 10px 10px;
 }
 
 nav ul{
 	margin: 0px;
-	padding-left: 10px;
+	padding-left: 20px;
 	display: flex;
 	justify-content: flex-start;
 	list-style-type: none;
 }
 
-nav ul li{
-	padding: 10px
+nav ul li {
+	padding: 10px;
+	border-color: black;
+	border-bottom-style: solid;
+	border-top-style: solid;
+}
+
+nav ul li:hover {
+	padding: 10px;
+	border-color: white;
+	border-bottom-style: solid;
+	border-top-style: solid;
 }
 
 nav a{
+	text-decoration: none;
+	font:menu;
+	font-size:20px;
+	color: white;
+}
+
+nav a:hover {
 	text-decoration: none;
 	color: white;
 }
@@ -76,19 +99,24 @@ nav a{
 
 #parkHomeDisplay{
 	display:flex;
+	vertical-align: top;
+	margin-bottom: 10px;
 }
 
 #parkHomeImage{
-	width: 28%;
+	vertical-align: top;
+	width: 300px;
 }
 
 #parkHomeDescriptionDiv{
+	vertical-align: top;
 	width:68%;
 }
 
 #tableHeader{
 	font-weight: bold;
 	font-size: 18px;
+	text-align: left;
 }
 
 banner {
@@ -114,4 +142,105 @@ banner {
 	justify-content: space-evenly;
 	width: 90%;
 	height: 75%;
+}
+
+#temp{
+	margin-top: 5px;
+	margin-left: 5px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	padding-left: 0px;
+	display: flex;
+	justify-content: space-evenly;
+	list-style-type: none;
+	border-radius: 20px 20px 20px 20px;
+	border-style: solid;
+	border-color: rgba(119, 118, 118, 0.26);
+	background-color:rgba(119, 118, 118, 0.26);
+	font:menu;
+	font-size:20px;
+	width:60px;
+}
+#farF{
+	text-align:center;
+	border-radius: 20px 0px 0px 20px;
+	background-color: rgba(119, 118, 118, 0.26);
+	color:white;
+	width:30px;
+}
+
+#farF:hover{
+	border-radius: 20px 0px 0px 20px;
+	background-color: white;
+	color:black;
+	width:30px;
+}
+
+#farF a{
+	text-decoration: none;
+	color:rgb(103, 202, 45);
+}
+
+#farC{
+	text-align:center;
+	border-radius: 20px 0px 0px 20px;
+	background-color: rgba(119, 118, 118, 0.26);
+	color:white;
+	width:30px;
+}
+
+#farC:hover{
+	border-radius: 20px 0px 0px 20px;
+	background-color: white;
+	color:black;
+	width:30px;
+}
+
+#farC a{
+	text-decoration: none;
+	color:grey;
+}
+
+#celF{
+	text-align:center;
+	border-radius: 0px 20px 20px 0px;
+	background-color: rgba(119, 118, 118, 0.26);
+	width:30px;
+}
+
+#celF:hover{
+	background-color: white;
+	border-radius: 0px 20px 20px 0px;
+	color:black;
+	width:30px;
+}
+
+#celF a{
+	text-decoration: none;
+	color:grey;
+}
+
+#celC{
+	text-align:center;
+	border-radius: 0px 20px 20px 0px;
+	background-color: rgba(119, 118, 118, 0.26);
+	width:30px;
+}
+
+#celC:hover{
+	background-color: white;
+	border-radius: 0px 20px 20px 0px;
+	color:black;
+	width:30px;
+}
+
+#celC a{
+	text-decoration: none;
+	color:rgb(103, 202, 45)
+}
+
+#info{
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
 }
