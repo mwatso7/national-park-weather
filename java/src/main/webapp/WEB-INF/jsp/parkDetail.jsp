@@ -33,59 +33,30 @@
 			<tr>
 				<td>&nbsp&nbsp&nbsp -- ${park.inspirationalquotesource}</td>
 			</tr>
-			<tr>
-				<td>&nbsp</td>
-			</tr>
-			<tr>
-				<td>
-				<div>
-	<p>
-		<span class="bold">Location: </span>${park.state}</p>
-	<p>
-		<span class="bold">Acreage: </span>${park.acreage}</p>
-	<p>
-		<span class="bold">Elevation: </span>${park.elevationinfeet}</p>
-	<p>
-		<span class="bold">Total trail length: </span>${park.milesoftrail}</p>
-	<p>
-		<span class="bold">Number of campsites: </span>${park.numberofcampsites}</p>
-	<p>
-		<span class="bold">Climate: </span>${park.climate}</p>
-	<p>
-		<span class="bold">Year founded: </span>${park.yearfounded}</p>
-	<p>
-		<span class="bold">Annual visitor count: </span>${park.annualvisitorcount}</p>
-	<p>
-		<span class="bold">Entry fee: </span>${park.entryfee}</p>
-	<p>
-		<span class="bold">Number of animal species: </span>${park.numberofanimalspecies}</p>
-</div>
-				</td>
-			</tr>
 		</table>
 	</div>
 </div>
-<div id="info">
+<div>
 	<p>
-		<span class="bold">Location: </span>${park.state}</p>
+		<div class="bold">Location: </div>${park.state}</p>
 	<p>
-		<span class="bold">Acreage: </span>${park.acreage}</p>
+		<div class="bold">Acreage: </div>${park.acreage}</p>
 	<p>
-		<span class="bold">Elevation: </span>${park.elevationinfeet}</p>
+		<div class="bold">Elevation: </div>${park.elevationinfeet}</p>
 	<p>
-		<span class="bold">Total trail length: </span>${park.milesoftrail}</p>
+		<div class="bold">Total trail length: </div>${park.milesoftrail}</p>
 	<p>
-		<span class="bold">Number of campsites: </span>${park.numberofcampsites}</p>
+		<div class="bold">Number of campsites: </div>${park.numberofcampsites}</p>
 	<p>
-		<span class="bold">Climate: </span>${park.climate}</p>
+		<div class="bold">Climate: </div>${park.climate}</p>
 	<p>
-		<span class="bold">Year founded: </span>${park.yearfounded}</p>
+		<div class="bold">Year founded: </div>${park.yearfounded}</p>
 	<p>
-		<span class="bold">Annual visitor count: </span>${park.annualvisitorcount}</p>
+		<div class="bold">Annual visitor count: </div>${park.annualvisitorcount}</p>
 	<p>
-		<span class="bold">Entry fee: </span>${park.entryfee}</p>
+		<div class="bold">Entry fee: </div>${park.entryfee}</p>
 	<p>
-		<span class="bold">Number of animal species: </span>${park.numberofanimalspecies}</p>
+		<div class="bold">Number of animal species: </div>${park.numberofanimalspecies}</p>
 </div>
 
 <div id="weatherDisplay">

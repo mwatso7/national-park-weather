@@ -64,7 +64,12 @@ nav a:hover {
 }
 
 .bold{
+	display: inline-block;
+	width: 200px;
 	font-weight:bold;
+	margin: 0px;
+	padding: 0px;
+	line-height: 1px;
 }
 
 #er {
@@ -86,6 +91,7 @@ nav a:hover {
 	border-radius: 20px 20px 20px 20px;
 	border-style: solid;
 	border-color: rgba(119, 118, 118, 0.26);
+	margin:1px;
 }
 
 #day2, #day3, #day4, #day5{
@@ -95,6 +101,7 @@ nav a:hover {
 	border-radius: 20px 20px 20px 20px;
 	border-style: solid;
 	border-color: rgba(119, 118, 118, 0.26);
+	margin:1px;
 }
 
 #parkHomeDisplay{
