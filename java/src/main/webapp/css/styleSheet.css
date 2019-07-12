@@ -67,9 +67,7 @@ nav a:hover {
 	display: inline-block;
 	width: 200px;
 	font-weight:bold;
-	margin: 0px;
-	padding: 0px;
-	line-height: 1px;
+	margin-left: 10px;
 }
 
 #er {
@@ -118,6 +116,7 @@ nav a:hover {
 #parkHomeDescriptionDiv{
 	vertical-align: top;
 	width:68%;
+	margin-left: 10px;
 }
 
 #tableHeader{
