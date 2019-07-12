@@ -77,7 +77,7 @@
 			
 			<img id="weatherImg" src="${weatherimage}" />
 			
-			<p>Day: ${day.fivedayforecastvalue}</p>
+			
 			
 			<c:choose>
 			
