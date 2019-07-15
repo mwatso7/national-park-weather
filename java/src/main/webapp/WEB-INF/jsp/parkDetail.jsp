@@ -36,27 +36,27 @@
 		</table>
 	</div>
 </div>
-<div>
-	<p>
-		<div class="bold">Location: </div>${park.state}</p>
-	<p>
-		<div class="bold">Acreage: </div>${park.acreage}</p>
-	<p>
-		<div class="bold">Elevation: </div>${park.elevationinfeet}</p>
-	<p>
-		<div class="bold">Total trail length: </div>${park.milesoftrail}</p>
-	<p>
-		<div class="bold">Number of campsites: </div>${park.numberofcampsites}</p>
-	<p>
-		<div class="bold">Climate: </div>${park.climate}</p>
-	<p>
-		<div class="bold">Year founded: </div>${park.yearfounded}</p>
-	<p>
-		<div class="bold">Annual visitor count: </div>${park.annualvisitorcount}</p>
-	<p>
-		<div class="bold">Entry fee: </div>${park.entryfee}</p>
-	<p>
-		<div class="bold">Number of animal species: </div>${park.numberofanimalspecies}</p>
+<div id="info">
+	<div>
+		<div class="bold">Location: </div>${park.state}</div>
+	<div>
+		<div class="bold">Acreage: </div>${park.acreage}</div>
+	<div>
+		<div class="bold">Elevation: </div>${park.elevationinfeet}</div>
+	<div>
+		<div class="bold">Total trail length: </div>${park.milesoftrail}</div>
+	<div>
+		<div class="bold">Number of campsites: </div>${park.numberofcampsites}</div>
+	<div>
+		<div class="bold">Climate: </div>${park.climate}</div>
+	<div>
+		<div class="bold">Year founded: </div>${park.yearfounded}</div>
+	<div>
+		<div class="bold">Annual visitor count: </div>${park.annualvisitorcount}</div>
+	<div>
+		<div class="bold">Entry fee: </div>${park.entryfee}</div>
+	<div>
+		<div class="bold">Number of animal species: </div>${park.numberofanimalspecies}</div>
 </div>
 
 <div id="weatherDisplay">
