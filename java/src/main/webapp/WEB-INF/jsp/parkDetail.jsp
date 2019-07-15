@@ -77,6 +77,8 @@
 			
 			<img id="weatherImg" src="${weatherimage}" />
 			
+			
+			
 			<c:choose>
 			
 				<c:when test="${celOrFar eq 'C'}">
